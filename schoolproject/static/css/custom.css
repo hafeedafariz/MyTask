@@ -1,0 +1,27 @@
+body{
+
+font-family: 'Roboto', sans-serif;
+}
+
+
+/***Navbar***/
+.nav-item{
+    letter_spacing : .2em;
+    font-size : 14px;
+    text-transform : uppercase;
+
+}
+.dropdown-item{
+    letter_spacing : .2em;
+    font-size : 14px;
+    text-transform : uppercase;
+
+
+}
+.my_custom_button{
+margin-top:5px;
+}
+.mx_auto{
+
+color:#fff;
+font-size: 12px;}

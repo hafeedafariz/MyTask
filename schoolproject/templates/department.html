@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block metadescription %}
+   {% if department %}
+      {{department.description|truncatewords:155}}
+   {% else %}
+      welcome to AMH university
+   {% endif %}
+{% endblock %}
+{% block title %}
+   {% if department %}
+      {{department.name}}-AMH university
+   {% else %}
+      see our courses..
+{% endif %}
+{% endblock %}
+
+
+{% block content %}
+   {% if department %}
+      <div>
+        <div>
+
+         <p> <a href="{% url 'schoolapp:allcourses' %}">coursess for you</a></p>
+
+            </div>
+      </div>
+   {% endif %}
+     <div>
+      {% if department %}
+
+
+
+      <h1>{{department.name}}</h1>
+      <p>{{department.description}}</p>
+
+     </div>
+      {% else %}
+     <div>
+         <table>
+          <tr>
+              <td>
+
+      <img class="my_image my_image_padding" src="{% static 'img/banner.png' %}" alt="courses" width="1050px";>
+              </td>
+              <td class="text-right">
+                  <ul> <li>
+                  <a href="{% url 'schoolapp:allcourses' %}"><h2>Please select your Courses</h2></a>
+        </li>
+        {% for i in links %}
+        <li> <a href="{{i.get_url}}"><h2>{{i.name}}</h2></a></li>
+        {% endfor %}
+
+
+              </td>
+          </tr>
+             <tr>
+
+            <a href="credentials/login" class="btn btn-primary btn-block my_custom_button">
+                login
+            </a>
+
+             </tr>
+      </table>
+
+    </div>
+    <br>
+   <div>
+      <h1>***About our way***</h1>
+       <p>Online learning involves courses offered by primary institutions that are 100% virtual. Online learning, or virtual classes offered over the internet, is contrasted with traditional courses taken in a brick-and-mortar school building. It is a development in distance education that expanded in the 1990s with the spread of the commercial Internet and the World Wide Web. The learner experience is typically asynchronous but may also incorporate synchronous elements. The vast majority of institutions utilize a learning management system for the administration of online courses. As theories of distance education evolve, digital technologies to support learning and pedagogy continue to transform as well.</p>
+    {% endif %}
+<div>
+    <div>
+        {% for course in courses %}
+        <div>
+            <a href="{{course.get_url}}"></a>
+
+                    <h4>{{course.name}}</h4>
+                    <p>{{course.description}}</p>
+                </div>
+
+            </div>
+     {% endfor %}
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}
+
+
+

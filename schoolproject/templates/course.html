@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block metadescription %}
+  {{course.description | truncatedwords:155}}
+   {% endblock %}
+    {% block title %}
+    {% if department %}
+    {{course.name}}-abcdef
+    {% endif%}
+{% endblock %}
+   {% block content %}
+<div>
+  <div>
+    <p><a href="{% url 'schoolapp:allcourses' %}">Home</a> | <a href="{{course.department.get_url}}">{{course.department}}</a> | {{course.name}} </p>
+
+  </div>
+
+  <br>
+  <div>
+    <div>
+      <div>
+        <img src="{{course.image.url}}" alt="{{course.name}}" style="width:250px; height:250px;">
+      </div>
+    </div>
+    <div>
+      <div>
+        <h1>{{course.name}}</h1>
+
+<!--        <p>${{product.price}}</p>-->
+        <p>course Description</p>
+        <p>{{course.description}}</p>
+        {% if course.availableseats <= 0 %}
+        <p><b>out of seats</b></p>
+        {% else %}
+<!--        <a class="btn btn-secondary" href="{% url 'cartapp:add_cart' product.id %}">Add to cart</a>-->
+          <a href="">aad to cart</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+</div>
+   {% endblock %}

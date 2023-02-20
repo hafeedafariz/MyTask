@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+</head>
+<body style="background-color:tomato;font-size:180%;">
+<form action="login"method="post">
+    {% csrf_token %}
+    <center>
+        <h2>welcome to new page</h2>
+
+        <input type="button"style="font-size:100%;">
+        <a href="{% url 'schoolapp:form' %}"style="color:black;font-size:30px;">click here for filling form</a>
+
+    </center>
+</form>
+
+
+</body>
+</html>

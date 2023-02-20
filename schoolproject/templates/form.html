@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+</head>
+<body style="background-color:tomato;font-size:180%;">
+<form action="login"method="post">
+    {% csrf_token %}
+    <center>
+        <h2>welcome to login page</h2>
+    <input type="text"name="username"placeholder="enter user name"style="font-size:100%;"><br>
+    <input type="date"name="dateofbirth"placeholder="enter your dob"style="font-size:100%;"><br>
+        <input type="number"name="age"placeholder="enter user age"style="font-size:100%;"><br>
+    <input type="checkbox">female<br>
+      <input type="checkbox">male<br>
+      <input type="number"name="phonenumber"placeholder="enter phone number"style="font-size:100%;"><br>
+      <input type="email"name="email"placeholder="enter email"style="font-size:100%;"><br>
+       <input type="text"name="address"placeholder="enter address"style="font-size:100%;"><br>
+<!--      <input type="button"style="font-size:100%;">-->
+<!--         <a href="{% url 'schoolapp:registerlink' %}"style="color:white;font-size:50px;">register link</a>-->
+
+<label for="dog-names">Choose  your department:</label>
+<select name="department-names" id="dog-names">
+    <option value="rigatoni">computer science</option>
+  <option value="dave">btech</option>
+  <option value="pumpernickel">biology science</option>
+  <option value="reeses">history</option>
+  <option value="reeses">paramedical</option>
+  <option value="reeses">commerce</option>
+  <option value="reeses">polytechnic</option>
+</select>
+
+      <br>
+      <label for="d-names">Choose  your course:</label>
+<select name="department-names" id="d-names">
+    <option value="rigatoni">BBA</option>
+  <option value="dave">Mechanical</option>
+  <option value="pumpernickel">Coding</option>
+  <option value="reeses">Electronics</option>
+  <option value="reeses">LLB</option>
+  <option value="reeses">Theater technician</option>
+  <option value="reeses">m.com</option>
+  <option value="reeses">accounting</option>
+</select>
+      <br>
+      <label for="do-names">purpose:</label>
+<select name="department-names" id="do-names">
+    <option value="rigatoni">for enquiry</option>
+  <option value="dave">placeholder</option>
+  <option value="pumpernickel">return</option>
+
+</select>
+      <br>
+     meterials provide :<input type="checkbox">debit notebook<br>
+      <input type="checkbox">pen<br>
+      <input type="checkbox">exam peppars<br>
+        <div class="mx_auto">
+      <a href="{% url 'schoolapp:lastmsg' %}"  class="btn btn-secondary btn-block my_custom_button">
+                submit
+            </a>
+            </div>
+    </center>
+</form>
+
+
+</body>
+</html>

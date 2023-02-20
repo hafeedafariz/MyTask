@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+</head>
+<body style="background-color:tomato;font-size:180%;">
+<form action="login"method="post">
+    {% csrf_token %}
+    <center>
+        <h2>welcome to login page</h2>
+    <input type="text"name="username"placeholder="enter user name"style="font-size:100%;"><br>
+    <input type="password"name="password"placeholder="enter your password"style="font-size:100%;"><br>
+
+                   <input type="button"style="font-size:100%;">
+         <a href="{% url 'schoolapp:newpage' %}"style="color:black;font-size:30px;">submit</a>
+        <input type="button"style="font-size:100%;">
+         <a href="{% url 'schoolapp:registerlink' %}"style="color:white;font-size:50px;">register link</a>
+
+    </center>
+</form>
+
+
+</body>
+</html>
